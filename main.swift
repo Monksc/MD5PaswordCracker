@@ -387,7 +387,7 @@ func cpuDoWorkGPUTest() {
 func main() {
 
     
-    let url = URL.init(fileURLWithPath: "URL FOR MD5 passwords")
+    let url = URL.init(fileURLWithPath: "CHANGE URL") // CHANGE 1 URL
     
     do {
         let text = try String(contentsOf: url, encoding: .utf8)
@@ -416,8 +416,8 @@ func main() {
     }
  */
     
-    endBatch = 10 * 10 * 26 * 26 * 26 * (26*2)
-    letterChoicesTotalSize = 11 + 11 + 3 * 27 + 26*2 + 1
+    endBatch = 10 * 10 * 26 * 26 * 26 * (26*2) // CHANGE 2 endBatch
+    letterChoicesTotalSize = 11 + 11 + 3 * 27 + 26*2 + 1 // CHANGE 3 letterChoicesTotalSize
     letterChoices = NodeInit(str: "0123456789")!
     //letterChoices = NodeAdd(self: letterChoices, str: "0123456789", allowDuplicates: true)!
     letterChoices = NodeAdd(self: letterChoices, str: "0123456789", allowDuplicates: true)!
@@ -426,16 +426,17 @@ func main() {
     //letterChoices = NodeAdd(self: letterChoices, str: "qwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
     letterChoices = NodeAdd(self: letterChoices, str: "qwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
     letterChoices = NodeAdd(self: letterChoices, str: "qwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
-    letterChoices = NodeAdd(self: letterChoices, str: "qwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
+    letterChoices = NodeAdd(self: letterChoices, str: "s", allowDuplicates: true)!
     letterChoices = NodeAdd(self: letterChoices, str: "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
     
     letterChoicesLength = Int(NodeCount(letterChoices))
     
     let startTime = Date.init()
     
-    /*
-    var threadsFinished = [Bool].init(repeating: false, count: 9)
+    // CHANGE 5
+    var threadsFinished = [Bool].init(repeating: false, count: 9) // 9 is CPU + GPU -1
     
+    // 8 is the amount of threeads on CPU
     for i in 0..<8 {
         DispatchQueue.global(qos: .default).async {
             cpuDoWork()
@@ -443,18 +444,20 @@ func main() {
         }
     }
     
+    // AMOUNT OF GPU RUNNING IS 1 + the one below here
     DispatchQueue.global(qos: .default).async {
         gpuDoWork()
         threadsFinished[8] = true
     }
+    // FINAL THREAD. EITHER DO GPU or CPU
     gpuDoWork()
     //cpuDoWork()
     //cpuDoWorkGPUTest()
     
     while threadsFinished.contains(false) {
         sleep(1)
-    }*/
-    cpuDoWork()
+    }
+    // CHANGE 5
  
     print(Date.init().timeIntervalSince(startTime))
 }
