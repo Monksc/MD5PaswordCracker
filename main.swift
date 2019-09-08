@@ -387,7 +387,7 @@ func cpuDoWorkGPUTest() {
 func main() {
 
     
-    let url = URL.init(fileURLWithPath: "CHANGE URL") // CHANGE 1 URL
+    let url = URL.init(fileURLWithPath: "/Users/cameronmonks/Projects/Hack/ReverseMD5Metal/allMD5Passwords.txt") // CHANGE 1 URL
     
     do {
         let text = try String(contentsOf: url, encoding: .utf8)
@@ -426,7 +426,7 @@ func main() {
     //letterChoices = NodeAdd(self: letterChoices, str: "qwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
     letterChoices = NodeAdd(self: letterChoices, str: "qwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
     letterChoices = NodeAdd(self: letterChoices, str: "qwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
-    letterChoices = NodeAdd(self: letterChoices, str: "s", allowDuplicates: true)!
+    letterChoices = NodeAdd(self: letterChoices, str: "qwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
     letterChoices = NodeAdd(self: letterChoices, str: "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm", allowDuplicates: true)!
     
     letterChoicesLength = Int(NodeCount(letterChoices))
