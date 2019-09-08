@@ -387,7 +387,7 @@ func cpuDoWorkGPUTest() {
 func main() {
 
     
-    let url = URL.init(fileURLWithPath: "URL FOR MD5 passwords")//"/Users/cameronmonks/Library/CloudStorage/iCloudDrive/Documents/OldDesktop/School/allMD5Passwords.txt")
+    let url = URL.init(fileURLWithPath: "URL FOR MD5 passwords")
     
     do {
         let text = try String(contentsOf: url, encoding: .utf8)
